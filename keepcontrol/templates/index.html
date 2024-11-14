@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% if hostname %}
+	<title>Control {{ hostname }}</title>
+	{% else %}
+	<title>KeepControl</title>
+	{% endif %}
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<script src="lib/socket.io.min.js"></script>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<div id="verification" class="hidden">
+		<h4>Enter the verification code on KeepControl terminal</h4>
+		<input id="verification-code" type="number" inputmode="numeric" placeholder="••••••••" required>
+		<button>Submit</button>
+	</div>
+	<div id="controller">
+		<div id="content">
+			<div id="content-mouse">
+				<div id="mouse-touchpad"></div>
+				<div id="mouse-clicks">
+					<div id="mouse-click-left" class="mouse-click"></div>
+					<div id="mouse-click-right" class="mouse-click"></div>
+				</div>
+			</div>
+		</div>
+		<div id="navbar">
+			<div class="navbar-item selected">
+				<img src="svg/mouse.svg" alt="mouse icon">
+			</div>
+			<div class="navbar-item">
+				<img src="svg/keyboard.svg" alt="keyboard icon">
+			</div>
+			<div id="navbar-menu" class="navbar-item hidden">
+				<img src="svg/menu.svg" alt="menu icon">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
